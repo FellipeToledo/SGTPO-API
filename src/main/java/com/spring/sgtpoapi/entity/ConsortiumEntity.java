@@ -2,6 +2,8 @@ package com.spring.sgtpoapi.entity;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SgtpoApiEntity {
+public class ConsortiumEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,13 +33,9 @@ public class SgtpoApiEntity {
   public String juridicalNature;
 
   @Column(nullable = false)
+  @JsonFormat(pattern = "yyyy-MM-dd")
   public Date openingDate;
 
   @Column(nullable = false)
-  public String socialReason;
-
-  @Column(nullable = false)
   public String address;
-
-
 }
